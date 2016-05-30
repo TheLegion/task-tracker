@@ -1,0 +1,15 @@
+
+wrapper {
+	gradleVersion = '2.13'
+}
+
+allprojects {
+	group = 'pro.sisit'
+	version = '0.9'
+
+	description = "Demo todo app project"
+
+	repositories {
+	     mavenCentral()
+	}
+}

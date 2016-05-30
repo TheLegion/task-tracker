@@ -1,0 +1,10 @@
+<div>
+	<header>Список дел на день</header>
+	<ul>
+		<task-component ng-repeat="task in tasksCtrl.tasks" task='task' change-state='tasksCtrl.changeState({task: task})' open='tasksCtrl.open({task: passedTask})'>
+		</task-component>
+	</ul>
+	<form ng-submit="tasksCtrl.addTask()">
+		<input type="text" ng-model="tasksCtrl.newTaskText">
+	</form>
+</div>
