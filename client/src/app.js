@@ -5,9 +5,7 @@ angular.module('tasksApp', ['ngRoute'])
 function routeConfig($routeProvider) {
 	$routeProvider
 	.when('/', {
-		templateUrl: 'views/list.html',
-		controller: 'tasksViewCtrl',
-		controllerAs: 'tasksViewCtrl'
+		template: '<task-list></task-list>'
 	})
 	.when('/:id', {
 		templateUrl: 'views/card.html',

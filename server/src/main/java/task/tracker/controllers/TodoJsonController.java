@@ -1,10 +1,10 @@
-package todoAppS03;
+package task.tracker.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import todoAppS03.dto.TodoDTO;
+import task.tracker.dto.TodoDTO;
 
 @Controller
 public class TodoJsonController {

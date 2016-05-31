@@ -1,4 +1,4 @@
-package todoAppS03;
+package task.tracker;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

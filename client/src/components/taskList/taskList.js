@@ -4,19 +4,18 @@ angular.module('tasksApp')
 	controller: taskListCtrl,
 	controllerAs: 'tasksCtrl',
 	bindings: {
-		tasks: '<',
-		changeState: '&',
 		add: '&',
-		open: '&'
 	}
 });
 
-function taskListCtrl() {
+function taskListCtrl(tasksService) {
 	var self = this;
+	
+	self.tasks = tasksService.getTasks();
 
 	self.addTask = function() {
 		if (self.newTaskText) {
-			self.add({text: self.newTaskText});
+			tasksService.add(self.newTaskText);
 			self.newTaskText = '';
 		}
 	};

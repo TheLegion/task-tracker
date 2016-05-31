@@ -1,4 +1,4 @@
-package todoAppS03.dto;
+package task.tracker.dto;
 
 public class TodoDTO {
 

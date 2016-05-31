@@ -5,7 +5,7 @@
 
 	<filter>
 		<filter-name>todoFilter</filter-name>
-		<filter-class>todoAppS03.TodoFilter</filter-class>
+		<filter-class>task.tracker.TodoFilter</filter-class>
 		<init-param>
 			<param-name>filter greeting name</param-name>
 			<param-value>todoAPPP!</param-value>
@@ -43,7 +43,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springServlet</servlet-name>
-		<url-pattern>/spring/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
@@ -58,19 +58,19 @@
 
     <servlet>
         <servlet-name>emperor</servlet-name>
-        <servlet-class>todoAppS03.EmperorServlet</servlet-class>
+        <servlet-class>task.tracker.EmperorServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>todo</servlet-name>
-        <servlet-class>todoAppS03.TodoServlet</servlet-class>
+        <servlet-class>task.tracker.TodoServlet</servlet-class>
     </servlet>
     <servlet>
     	<servlet-name>sqlite</servlet-name>
-    	<servlet-class>todoAppS03.SqliteServlet</servlet-class>
+    	<servlet-class>task.tracker.SqliteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>emperor</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/old-root/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>todo</servlet-name>

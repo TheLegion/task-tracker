@@ -4,10 +4,13 @@ apply plugin: 'eclipse-wtp'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-def warName = "task-tracker"
-
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+}
+
+war {
+	from ('../client') { into 'resources'}
+    archiveName = project.name + '.war'
 }
 
 dependencies {
