@@ -6,8 +6,8 @@
 
 	<bean id="dataSourceBeanId" class="org.apache.commons.dbcp.BasicDataSource" 
 	        destroy-method="close">
-	    <property name="driverClassName" value="org.sqlite.JDBC" />
-	    <property name="url" value="jdbc:sqlite:/Downloads/task-tracker.db" />
+	    <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+	    <property name="url" value="jdbc:hsqldb:file:/Downloads/task-tracker.db;hsqldb.write_delay=false" />
 	</bean>
 	
 	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">

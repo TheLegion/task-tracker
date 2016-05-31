@@ -5,7 +5,6 @@ wrapper {
 allprojects {
 	group = 'pro.sisit'
 	version = '0.9'
-	name = 'task-tracker'
 
 	description = "Demo todo app project"
 
