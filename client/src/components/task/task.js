@@ -1,6 +1,6 @@
 angular.module('tasksApp')
 .component('taskComponent', {
-	templateUrl: 'components/task/task.html',
+	templateUrl: 'resources/components/task/task.html',
 	controllerAs: 'taskCtrl',
 	controller: taskController,
 	bindings: {

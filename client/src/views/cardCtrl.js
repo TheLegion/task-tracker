@@ -3,5 +3,7 @@ angular.module('tasksApp')
 
 function taskViewCtrl(tasksService, $routeParams, $scope) {
 	var id = parseInt($routeParams.id);
-	$scope.task = tasksService.get(id);
+	tasksService.get(id).then(function (task) {
+		$scope.task = task;
+	});
 }

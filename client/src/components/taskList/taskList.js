@@ -1,17 +1,16 @@
 angular.module('tasksApp')
 .component('taskList', {
-	templateUrl: 'components/taskList/taskList.html',
+	templateUrl: 'resources/components/taskList/taskList.html',
 	controller: taskListCtrl,
-	controllerAs: 'tasksCtrl',
-	bindings: {
-		add: '&',
-	}
+	controllerAs: 'tasksCtrl'
 });
 
 function taskListCtrl(tasksService) {
 	var self = this;
 	
-	self.tasks = tasksService.getTasks();
+	tasksService.getTasks().then(function(tasks) {
+		self.tasks = tasks;
+	});
 
 	self.addTask = function() {
 		if (self.newTaskText) {

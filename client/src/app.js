@@ -8,13 +8,13 @@ function routeConfig($routeProvider) {
 		template: '<task-list></task-list>'
 	})
 	.when('/:id', {
-		templateUrl: 'views/card.html',
+		templateUrl: 'resources/views/card.html',
 		controller: 'taskViewCtrl'
 	})
 	.otherwise('/');
 }
 
-function tasksService() {
+function tasksService($http) {
 	var tasks = [{
 		id: 1,
 		text: 'Изучить основы ангуляра',
@@ -36,27 +36,27 @@ function tasksService() {
 
 	return {
 		getTasks: function() {
-			return tasks;
+			return $http.get('./tasks').then(returnData);
 		},
 		changeState: function(task) {
-			task.checked = !task.checked;
+			// TODO
+//			task.checked = !task.checked;
 		},
 		addTask: function(text) {
-			var task = {
-				id: tasks[tasks.length - 1].id + 1,
-				text: text,
-				checked: false
-			};
-			tasks.push(task);
+			// TODO
+//			var task = {
+//				id: tasks[tasks.length - 1].id + 1,
+//				text: text,
+//				checked: false
+//			};
+//			tasks.push(task);
 		},
 		get: function(id) {
-			for (var i = 0; i < tasks.length; i++) {
-				var task = tasks[i];
-				if (task.id === id) {
-					return task;
-				}
-			}
-			return null;
+			return $http.get('./tasks/' + id).then(returnData);
 		}
 	};
+	
+	function returnData(response) {
+		return response.data;
+	}
 }
